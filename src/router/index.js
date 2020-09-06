@@ -15,6 +15,9 @@ const routes = [
   {
     path: "/shop",
     component: Shop,
+    meta: {
+      title: "Shop",
+    },
   },
   {
     path: "/blog",
@@ -28,6 +31,13 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   routes,
+});
+
+router.beforeEach((toRoute, fromRoute, next) => {
+  window.document.title =
+    toRoute.meta && toRoute.meta.title ? toRoute.meta.title : "Home";
+
+  next();
 });
 
 export default router;
