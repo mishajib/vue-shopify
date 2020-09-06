@@ -25,9 +25,9 @@
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                         </button>
-                        <a href="#">
+                        <router-link to="/">
                           <img src="../assets/img/shopify-homepage.jpg" />
-                        </a>
+                        </router-link>
                       </div>
                       <!-- Collection of nav links, forms, and other content for toggling -->
                       <div
@@ -36,33 +36,33 @@
                       >
                         <ul class="nav navbar-nav navcustom">
                           <li>
-                            <a href="index.html">Home</a>
+                            <router-link to="/"> Home </router-link>
                           </li>
                           <li>
-                            <a href="Product_Page.html">Pages</a>
+                            <router-link to="/shop"> Pages </router-link>
                           </li>
                           <li>
-                            <a href="#">Portfolio</a>
+                            <router-link to="/shop">Portfolio</router-link>
                           </li>
                           <li>
-                            <a href="blog.html">Blog</a>
+                            <router-link to="/blog">Blog</router-link>
                           </li>
                           <li>
-                            <a href="#">Shop</a>
+                            <router-link to="/shop">Shop</router-link>
                           </li>
                           <li>
-                            <a href="contact.html">Contact</a>
+                            <router-link to="/contact">Contact</router-link>
                           </li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
                           <li class="border">
-                            <a id="clickthis" href="#">
+                            <a id="clickthis" href="javascrip:void(0);">
                               <i class="fa fa-search" aria-hidden="true"></i>
                             </a>
                           </li>
                           <li class="border1">
-                            <a href="#">
+                            <a href="javascript:void(0);">
                               <i class="fa fa-share-alt" aria-hidden="true"></i>
                             </a>
                           </li>
@@ -92,91 +92,7 @@
                       </div>
                     </form>
                   </div>
-
-                  <!--                                <button >dolon.....</button>-->
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="slider">
-              <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators idicate">
-                  <li
-                    data-target="#myCarousel"
-                    data-slide-to="0"
-                    class="active"
-                  ></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <!--
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                <li data-target="#myCarousel" data-slide-to="3"></li>
-                                <li data-target="#myCarousel" data-slide-to="4"></li>
-                                <li data-target="#myCarousel" data-slide-to="5"></li>
-                                <li data-target="#myCarousel" data-slide-to="6"></li>
-                  -->
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner vvvvv" role="listbox">
-                  <div class="item active">
-                    <div class="shopit">
-                      <h1>
-                        Brand New Summer-sale
-                        <br />Special dress Now online
-                      </h1>
-                      <button class="shop_btn">SHOP IT NOW</button>
-                    </div>
-                    <img
-                      class="slideromag"
-                      src="../assets/img/slider.jpg"
-                      alt="Chania"
-                      width="100%"
-                      height="290px"
-                    />
-                  </div>
-
-                  <div class="item">
-                    <div class="shopit">
-                      <h1>
-                        Brand New Summer-sale
-                        <br />Special dress Now online
-                      </h1>
-                      <button class="shop_btn">SHOP IT NOW</button>
-                    </div>
-                    <img
-                      class="slideromag"
-                      src="../assets/img/slider.jpg"
-                      alt="Chania"
-                      width="100%"
-                      height="290px"
-                    />
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a
-                  class="left carousel-control control"
-                  href="#myCarousel"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a
-                  class="right carousel-control control"
-                  href="#myCarousel"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span class="sr-only">Next</span>
-                </a>
               </div>
             </div>
           </div>
@@ -191,3 +107,9 @@ export default {
   name: "HelloWorld",
 };
 </script>
+
+<style>
+.active {
+  color: #000;
+}
+</style>
