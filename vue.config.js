@@ -1,3 +1,3 @@
-export default {
-  publicPath: "/vue-shopify/",
+module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-shopify/" : "/",
 };
