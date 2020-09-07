@@ -6,9 +6,9 @@
           <div class="backimg">
             <img class="img-responsive" src="../assets/img/slide.jpg" />
             <div class="heading">
-              <h1>PRODUCT</h1>
+              <h1>{{ title }}</h1>
               <img src="../assets/img/border.jpg" />
-              <h5>Home>Product</h5>
+              <h5>Home>{{ title }}</h5>
             </div>
           </div>
         </div>
@@ -20,5 +20,8 @@
 <script>
 export default {
   name: "PageHeader",
+  props: {
+    title: String,
+  },
 };
 </script>

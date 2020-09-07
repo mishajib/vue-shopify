@@ -2,7 +2,7 @@
   <div>
     <Topbar />
     <Navbar />
-    <Pageheader />
+    <Pageheader title="Store" />
 
     <div class="menumain0">
       <div class="container">
