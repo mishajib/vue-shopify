@@ -9,7 +9,7 @@
               <h1 class="style2">{{ offer.subtitle }}</h1>
             </div>
 
-            <img class="img-responsive imgres" :src="getImage(offer.img)" alt="AUTOMN STYLE" />
+            <img class="img-responsive imgres" :src="getImage(offer.img)" :alt="offer.title" />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Shop from "../views/Shop.vue";
 import Home from "../views/Home.vue";
 import Blog from "../views/Blog.vue";
 import VueRouter from "vue-router";
+import Product from "../views/Product.vue";
 
 Vue.use(vueRouter);
 
@@ -22,6 +23,10 @@ const routes = [
   {
     path: "/blog",
     component: Blog,
+  },
+  {
+    path: "/product/details",
+    component: Product,
   },
   {
     path: "/contact",

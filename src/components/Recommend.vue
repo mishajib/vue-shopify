@@ -17,24 +17,18 @@
     </div>
     <div class="container">
       <div class="row">
-        <div
-          v-for="product in products"
-          :key="product.id"
-          class="col-md-3 col-sm-3 col-xs-12"
-        >
+        <div v-for="product in products" :key="product.id" class="col-md-3 col-sm-3 col-xs-12">
           <div class="product">
             <div
               :class="product.sale != '' ? 'sale btnhover' : 'btnhover'"
               :data-caption="product.sale"
             >
               <img class="imghover imgres img-responsive" :src="product.img" />
-              <a href="single_product.html">
-                <button id="sidebar">Shop now</button></a
-              >
+              <router-link to="/product/details">
+                <button id="sidebar">Shop now</button>
+              </router-link>
               <h4 class="ammount">{{ product.price }}</h4>
-              <p>
-                {{ product.desc }}
-              </p>
+              <p>{{ product.desc }}</p>
             </div>
           </div>
         </div>

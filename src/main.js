@@ -5,6 +5,8 @@ import "./assets/css/style.css";
 import "./assets/css/responsive.css";
 import "./assets/css/style_propage.css";
 import "./assets/css/responsive_propage.css";
+import "./assets/css/stylepage.css";
+import "./assets/css/responsivepage.css";
 
 Vue.config.productionTip = false;
 

@@ -8,51 +8,22 @@
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators idicate">
-                  <li
-                    data-target="#myCarousel"
-                    data-slide-to="0"
-                    class="active"
-                  ></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <!--
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                <li data-target="#myCarousel" data-slide-to="3"></li>
-                                <li data-target="#myCarousel" data-slide-to="4"></li>
-                                <li data-target="#myCarousel" data-slide-to="5"></li>
-                                <li data-target="#myCarousel" data-slide-to="6"></li>
-                  -->
+                  <li v-for="(slider, index) in sliders" :key="index" data-target="#myCarousel" :data-slide-to="index" :class="(index == 0) ? 'active': ''"></li>
                 </ol>
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner vvvvv" role="listbox">
-                  <div class="item active">
+                  <div v-for="(slider, index) in sliders" :key="index" :class="(index == 0) ? 'item active':'item'">
                     <div class="shopit">
                       <h1>
-                        Brand New Summer-sale
-                        <br />Special dress Now online
+                        {{ slider.title }}
+                        <br /> {{ slider.subtitle }}
                       </h1>
                       <button class="shop_btn">SHOP IT NOW</button>
                     </div>
                     <img
                       class="slideromag"
-                      src="../assets/img/slider.jpg"
-                      alt="Chania"
-                      width="100%"
-                      height="290px"
-                    />
-                  </div>
-
-                  <div class="item">
-                    <div class="shopit">
-                      <h1>
-                        Brand New Summer-sale
-                        <br />Special dress Now online
-                      </h1>
-                      <button class="shop_btn">SHOP IT NOW</button>
-                    </div>
-                    <img
-                      class="slideromag"
-                      src="../assets/img/slider.jpg"
+                      :src="slider.img"
                       alt="Chania"
                       width="100%"
                       height="290px"
@@ -89,5 +60,22 @@
 <script>
 export default {
   name: "Carousel",
+  data() {
+    return {
+      sliders: [
+        {
+          title: "Brand New Summer-sale",
+          subtitle: "Special dress Now online",
+          img: require("../assets/img/slider.jpg"),
+        },
+
+        {
+          title: "Brand New Summer-sale",
+          subtitle: "Special dress Now online",
+          img: require("../assets/img/slider2.jpg"),
+        },
+      ],
+    };
+  },
 };
 </script>

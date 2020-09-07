@@ -29,53 +29,22 @@
               <div class="categories">
                 <h2>CATEGORIES</h2>
                 <ul>
-                  <li>
-                    <a href="#">Men</a><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Women</a><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Kid</a><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Summer</a><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Accesories</a
-                    ><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Household</a
-                    ><a class="counter" href="#">(55)</a>
-                  </li>
-                  <li>
-                    <a href="#">Others</a><a class="counter" href="#">(55)</a>
+                  <li v-for="(category, index) in categories" :key="index">
+                    <a href="#">{{ category.title }}</a>
+                    <a class="counter" href="#">({{ category.stock }})</a>
                   </li>
                 </ul>
               </div>
               <div class="recentpost">
                 <h2>RECENT POST</h2>
                 <ul>
-                  <li>
-                    <a href="#"><img src="../assets/img/post1.jpg"/></a>
+                  <li v-for="(post, index) in recentPosts" :key="index">
+                    <a href="#">
+                      <img :src="post.img" />
+                    </a>
                     <div class="discrip">
-                      <p style="color:#3C3C3C">Men's Full Pant</p>
-                      <p style="color:#797A7A">$125</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#"><img src="../assets/img/post2.jpg"/></a>
-                    <div class="discrip">
-                      <p style="color:#3C3C3C">Men's Full Pant</p>
-                      <p style="color:#797A7A">$125</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#"><img src="../assets/img/post3.jpg"/></a>
-                    <div class="discrip">
-                      <p style="color:#3C3C3C">Men's Full Pant</p>
-                      <p style="color:#797A7A">$125</p>
+                      <p style="color:#3C3C3C">{{ post.title }}</p>
+                      <p style="color:#797A7A">{{ post.price }}</p>
                     </div>
                   </li>
                 </ul>
@@ -90,7 +59,8 @@
                     <ul>
                       <li>Item 1 to 12 of 50 Items</li>
                       <li>
-                        Show&nbsp;&nbsp; <input type="box" />&nbsp;&nbsp;Per
+                        Show&nbsp;&nbsp;
+                        <input type="box" />&nbsp;&nbsp;Per
                         Page
                       </li>
                       <li>Short By</li>
@@ -99,229 +69,69 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4  col-sm-4">
+                <div v-for="(product, index) in products" :key="index" class="col-md-4 col-sm-4">
                   <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
+                    <div
+                      :class="product.sale != '' ? 'sale btnhover' : 'btnhover'"
+                      :data-caption="product.sale"
+                    >
+                      <img class="imghover imgres img-responsive" :src="product.img" />
+                      <router-link to="/product/details">
                         <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class=" btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/men.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
+                      </router-link>
+                      <h4 class="ammount">{{ product.price }}</h4>
+                      <p>{{ product.desc }}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4  col-sm-4">
+                <div v-for="(product, index) in products" :key="index" class="col-md-4 col-sm-4">
                   <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
+                    <div
+                      :class="product.sale != '' ? 'sale btnhover' : 'btnhover'"
+                      :data-caption="product.sale"
+                    >
+                      <img class="imghover imgres img-responsive" :src="product.img" />
+                      <router-link to="/product/details">
                         <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class=" btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/men.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
+                      </router-link>
+                      <h4 class="ammount">{{ product.price }}</h4>
+                      <p>{{ product.desc }}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4  col-sm-4">
+                <div v-for="(product, index) in products" :key="index" class="col-md-4 col-sm-4">
                   <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
+                    <div
+                      :class="product.sale != '' ? 'sale btnhover' : 'btnhover'"
+                      :data-caption="product.sale"
+                    >
+                      <img class="imghover imgres img-responsive" :src="product.img" />
+                      <router-link to="/product/details">
                         <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class=" btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/men.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
+                      </router-link>
+                      <h4 class="ammount">{{ product.price }}</h4>
+                      <p>{{ product.desc }}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4  col-sm-4">
+                <div v-for="(product, index) in products" :key="index" class="col-md-4 col-sm-4">
                   <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
+                    <div
+                      :class="product.sale != '' ? 'sale btnhover' : 'btnhover'"
+                      :data-caption="product.sale"
+                    >
+                      <img class="imghover imgres img-responsive" :src="product.img" />
+                      <router-link to="/product/details">
                         <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class=" btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/men.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4  col-sm-4">
-                  <div class="product">
-                    <div class="sale btnhover" data-caption="SALE">
-                      <img
-                        class="imghover imgres img-responsive"
-                        src="../assets/img/ladiesp.jpg"
-                      />
-                      <a href="single_product.html">
-                        <button id="sidebar">Shop now</button>
-                      </a>
-                      <h4 class="ammount">$495.00</h4>
-                      <p>
-                        Lorriusm ipsum dollar monstar <br />
-                        Lorriusm ipsum dollar
-                      </p>
+                      </router-link>
+                      <h4 class="ammount">{{ product.price }}</h4>
+                      <p>{{ product.desc }}</p>
                     </div>
                   </div>
                 </div>
@@ -330,18 +140,14 @@
               <div class="row">
                 <div class="col-md-12 right">
                   <div class="npbtn">
-                    <div class="btn-group ">
-                      <button type="button" class="btn btn-default">
-                        ←Previous
-                      </button>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">←Previous</button>
                       <button type="button" class="btn btn-default">1</button>
                       <button type="button" class="btn btn-default">2</button>
                       <button type="button" class="btn btn-default">3</button>
                       <button type="button" class="btn btn-default">4</button>
                       <button type="button" class="btn btn-default">5</button>
-                      <button type="button" class="btn btn-default">
-                        Next→
-                      </button>
+                      <button type="button" class="btn btn-default">Next→</button>
                     </div>
                   </div>
                 </div>
@@ -368,6 +174,85 @@ import Copyright from "../components/Copyright.vue";
 
 export default {
   name: "Shop",
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          img: require("../assets/img/ladiesp.jpg"),
+          price: "$495.00",
+          desc: `Lorriusm ipsum dollar monstar
+                Lorriusm ipsum dollar`,
+          sale: "SALE",
+        },
+        {
+          id: 2,
+          img: require("../assets/img/men.jpg"),
+          price: "$310.00",
+          desc: `Lorriusm ipsum dollar monstar
+                Lorriusm ipsum dollar`,
+          sale: "",
+        },
+        {
+          id: 3,
+          img: require("../assets/img/ladiesp1.jpg"),
+          price: "$550.00",
+          desc: `Lorriusm ipsum dollar monstar
+                Lorriusm ipsum dollar`,
+          sale: "SALE",
+        },
+      ],
+      recentPosts: [
+        {
+          img: require("../assets/img/post1.jpg"),
+          title: "Men's Full Pant",
+          price: "$125",
+        },
+
+        {
+          img: require("../assets/img/post2.jpg"),
+          title: "Men's Full Pant",
+          price: "$125",
+        },
+
+        {
+          img: require("../assets/img/post3.jpg"),
+          title: "Men's Full Pant",
+          price: "$125",
+        },
+      ],
+      categories: [
+        {
+          title: "Men",
+          stock: 65,
+        },
+        {
+          title: "Women",
+          stock: 75,
+        },
+        {
+          title: "Kid",
+          stock: 95,
+        },
+        {
+          title: "Summer",
+          stock: 25,
+        },
+        {
+          title: "Accesories",
+          stock: 45,
+        },
+        {
+          title: "Household",
+          stock: 35,
+        },
+        {
+          title: "Others",
+          stock: 100,
+        },
+      ],
+    };
+  },
   components: {
     Navbar,
     Topbar,
